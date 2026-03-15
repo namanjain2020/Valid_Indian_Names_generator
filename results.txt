@@ -1,0 +1,84 @@
+================================
+Model: RNN
+
+Generated Samples:
+anika menon
+kabin grover
+kabir dwivedi
+aarohi karure
+aadhya dubey
+reyansh bandit
+aarav pandey
+anika dwivedi
+aadhya bajpai
+myra iyer
+aadhya kurup
+aadhya karath
+aarohi sood
+ayaan bhardwaj
+pari naik
+reyansh jain
+diya pai
+diya naik
+dhanvi sood
+diya singh
+
+Novelty Rate: 0.462
+Diversity: 0.678
+
+================================
+Model: BiLSTM
+
+Generated Samples:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Novelty Rate: 1.0
+Diversity: 0.001
+
+================================
+Model: Attention
+
+Generated Samples:
+pari malhotra
+aarav bajaj
+raghav bajaj
+myra bajpai
+myra bajpai
+vivaan bajaj
+diya verma
+bayaan saxena
+geeta saxena
+gauravi bijad
+warhan malhavey
+myra saxena
+myra bajpai
+sarar saxena
+myra saxena
+geeta sood
+sanan agarwal
+sanan bharma
+geota naik
+reyansh reddy
+
+Novelty Rate: 0.503
+Diversity: 0.567
+
