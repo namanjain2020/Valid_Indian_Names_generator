@@ -7,12 +7,12 @@ from attention_rnn import AttentionRNN
 with open("TrainingNames.txt") as f:
     train_names = [line.strip().lower() for line in f]
 
-train_set = set(train_names)
-names = ["<"+n+">" for n in train_names]
-chars = sorted(list(set("".join(names))))
+train_set = set(train_names)                                    # Store training set for novelty calculation
+names = ["<"+n+">" for n in train_names]                        # Add start "<" and end ">" tokens
+chars = sorted(list(set("".join(names))))                       # Create character vocabulary
 
-char2idx = {c:i for i,c in enumerate(chars)}
-idx2char = {i:c for c,i in char2idx.items()}
+char2idx = {c:i for i,c in enumerate(chars)}                    # Create character-to-index mappings
+idx2char = {i:c for c,i in char2idx.items()}                    # Create index-to-character mappings
 vocabulary_size = len(chars)
 
 def generate_name(model):
@@ -55,9 +55,9 @@ def evaluate(model):
     for _ in range(1000):
         generated.append(generate_name(model))
 
-    novel = [n for n in generated if n not in train_set]
-    novelty = len(novel) / len(generated)                      # Novelty
-    diversity = len(set(generated)) / len(generated)           # Diversity
+    novel = [n for n in generated if n not in train_set]        # Novelty: Percent of names NOT in training data
+    novelty = len(novel) / len(generated)                      
+    diversity = len(set(generated)) / len(generated)            # Diversity: % of unique generated names
 
     return generated[:20], novelty, diversity
 
@@ -69,10 +69,10 @@ models = {
 
 with open("results.txt", "w") as f:
     for name, model in models.items():
-        model.load_state_dict(torch.load(name.lower() + "_model.pth", weights_only=True))
+        model.load_state_dict(torch.load(name.lower() + "_model.pth", weights_only=True)) # Load trained weights
         model.eval()
-        samples, novelty, diversity = evaluate(model)
-        f.write("================================\n")
+        samples, novelty, diversity = evaluate(model)                                      # Evaluate model
+        f.write("================================\n")                                      # Write results
         f.write("Model: " + name + "\n\n")
         f.write("Generated Samples:\n")
 
