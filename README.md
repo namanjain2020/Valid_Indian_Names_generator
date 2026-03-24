@@ -14,19 +14,16 @@ We implement and compare:
 
 ## 🧠 Objective
 
-Given a sequence of characters:
-[
-x = (x_1, x_2, ..., x_T)
-]
+The objective of this work is to learn a probabilistic model over character sequences for the task of name generation. 
+Formally, given a sequence:
 
-the model learns:
-[
-P(x) = \prod_{t=1}^{T} P(x_t \mid x_1, ..., x_{t-1})
-]
+x = (x₁, x₂, ..., x_T),
 
-and generates new names character by character.
+the model estimates the joint probability as:
 
----
+P(x) = ∏ P(x_t | x₁, x₂, ..., x_{t-1})
+
+This autoregressive formulation allows the model to generate new names sequentially, by sampling each character conditioned on the preceding context.
 
 ## 📂 Project Structure
 
