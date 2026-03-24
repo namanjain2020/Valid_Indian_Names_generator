@@ -222,8 +222,8 @@ pip install torch numpy
 ## 👨‍🎓 Author
 
 **Naman Jain**
-B22BB027
-IIT Jodhpur
+*B22BB027
+*IIT Jodhpur
 
 ---
 
