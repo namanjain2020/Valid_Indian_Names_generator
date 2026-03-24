@@ -1,4 +1,4 @@
-# Character-Level Name Generation using RNN Variants
+# Character-Level Name Generation 
 
 ## 📌 Overview
 
