@@ -139,14 +139,15 @@ myra bajpai
 
 BiLSTM performs poorly for generation because:
 
-* It learns:
-  [
-  P(x_t \mid x_{<t}, x_{>t})
-  ]
-* But during generation:
-  [
-  P(x_t \mid x_{<t})
-  ]
+The poor performance of BiLSTM in sequence generation arises from a fundamental mismatch between its training objective and inference setting.
+
+During training, BiLSTM leverages bidirectional context and models:
+P(x_t | x_{<t}, x_{>t})
+
+In contrast, autoregressive generation requires predicting tokens based only on past context:
+P(x_t | x_{<t})
+
+Since future context is unavailable at inference time, the learned representations become inconsistent, leading to degraded performance, including premature termination and mode collapse.
 
 This mismatch causes:
 
